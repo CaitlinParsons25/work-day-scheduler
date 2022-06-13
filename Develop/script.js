@@ -79,7 +79,7 @@ var timeColor = function() {
     $("#3pm").append(threePm);
 
     if (moment().isAfter(threePm, "hour")) {
-    $("3pm-text").addClass("past");
+    $("#3pm-text").addClass("past");
     } else if (moment().isBefore(threePm, "hour")) {
     $("#3pm-text").addClass("future");
     } else {
@@ -91,7 +91,7 @@ var timeColor = function() {
     $("#4pm").append(fourPm);
 
     if (moment().isAfter(fourPm, "hour")) {
-    $("#4pmm-text").addClass("past");
+    $("#4pm-text").addClass("past");
     } else if (moment().isBefore(fourPm, "hour")) {
     $("#4pm-text").addClass("future");
     } else {
@@ -111,11 +111,18 @@ var timeColor = function() {
     };
 };
 
+$(".saveBtn").on("click", function() {
+    var text = $(this).siblings("textarea").val();
+    });
+
+
 timeColor();
+
 
 setInterval(function() {
     $(".time-block").each(function() {
       timeColor($(this));
     });
   }, 300000);
+
 
