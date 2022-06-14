@@ -109,20 +109,32 @@ var timeColor = function() {
     } else {
     $("#5pm-text").addClass("present")
     };
+
 };
 
 $(".saveBtn").on("click", function() {
-    var text = $(this).siblings("textarea").val();
+    var scheduleText = $(this).siblings(".description").val();
+    var timeId = $(this).parent().attr("id");
+    localStorage.setItem(timeId, scheduleText);
+    console.log(scheduleText);
     });
+
+var getSchedule = function () {
+    $("#9am-text").val(localStorage.getItem("9am"));
+    $("#10am-text").val(localStorage.getItem("10am"));
+    $("#11am-text").val(localStorage.getItem("11am"));
+    $("#12pm-text").val(localStorage.getItem("12pm"));
+    $("#1pm-text").val(localStorage.getItem("1pm"));
+    $("#2pm-text").val(localStorage.getItem("2pm"));
+    $("#3pm-text").val(localStorage.getItem("3pm"));
+    $("#4pm-text").val(localStorage.getItem("4pm"));
+    $("#5pm-text").val(localStorage.getItem("5pm"));
+
+};
 
 
 timeColor();
+getSchedule();
 
-
-setInterval(function() {
-    $(".time-block").each(function() {
-      timeColor($(this));
-    });
-  }, 300000);
 
 
