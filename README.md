@@ -1,4 +1,4 @@
-#Work Day Scheduler
+# Work Day Scheduler
 
 https://caitlinparsons25.github.io/work-day-scheduler/
 
